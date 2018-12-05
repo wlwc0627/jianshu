@@ -2,15 +2,18 @@ import styled from 'styled-components';
 import logoPic from '../../static/logo.png'
 
 export const HeaderWrapper = styled.div`
-    position: relative;
-    min-width: 820px; 
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #fff;
+    min-width: 970px; 
     height: 56px;
     border-bottom: 1px solid #f0f0f0;
 `;
 
-export const Logo = styled.a.attrs({
-    href: '/'
-})`
+export const Logo = styled.div`
     position: absolute;
     left: 0;
     top: 0;
@@ -106,12 +109,14 @@ export const NavSearch = styled.input.attrs({
 `;
 
 export const SearchInfo = styled.div`
+    z-index: 10;
     position: absolute;
     left: 0;
     top: 56px;
     width: 240px;
     padding: 0 20px;
     box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    background: #fff;   
 `;
 
 export const SearchInfoTitle = styled.div`

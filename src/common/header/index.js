@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { actionCreator } from './store';
+import { Link } from 'react-router-dom';
 import {
     HeaderWrapper,
     Logo,
@@ -25,7 +26,9 @@ class Header extends Component {
 
         return (
             <HeaderWrapper>
-                <Logo />
+                <Link to='/'>
+                    <Logo />
+                </Link>
                 <Nav>
                     <NavItem className='left active'>
                         首页
@@ -34,7 +37,11 @@ class Header extends Component {
                         <i className='iconfont'>&#xe6d4;</i>
                         下载App
                     </NavItem>
-                    <NavItem className='right'>登陆</NavItem>
+                    <NavItem className='right'>
+                        <Link to='/login'>
+                            登陆
+                        </Link>
+                    </NavItem>
                     <NavItem className='right'>
                         <i className='iconfont'>&#xe607;</i>
                     </NavItem>
@@ -60,7 +67,11 @@ class Header extends Component {
                         <i className='iconfont'>&#xe60b;</i>
                         写文章
                     </Button>
-                    <Button className='register'>注册</Button>
+                    <Button className='register'>
+                        <Link to='/login'>
+                            注册
+                        </Link>
+                    </Button>
                 </Addition>
             </HeaderWrapper>
         );
